@@ -1,9 +1,10 @@
 /**
- * 提示：如您想使用JS版本的配置文件可参考：https://github.com/xugaoyi/vuepress-theme-vdoing/tree/a2f03e993dd2f2a3afdc57cf72adfc6f1b6b0c32/docs/.vuepress
+ * 提示：如您想使用JS版本的配置文件可参考：https://github.com/citccld/vuepress-theme-vdoing/tree/a2f03e993dd2f2a3afdc57cf72adfc6f1b6b0c32/docs/.vuepress
  */
 import { resolve } from 'path'
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config'
 import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types'
+// @ts-ignore
 import dayjs from 'dayjs'
 import baiduCode from './config/baiduCode' // 百度统计hm码
 import htmlModules from './config/htmlModules' // 自定义插入的html块
@@ -31,7 +32,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       { text: '首页', link: '/' },
       {
         text: '前端',
-        link: '/web/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        link: '/frontend/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
         items: [
           // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
           {
@@ -44,22 +45,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             text: '学习笔记',
             items: [
               { text: '《JavaScript教程》', link: '/note/javascript/' },
-              { text: '《JavaScript高级程序设计》', link: '/note/js/' },
               { text: '《ES6 教程》', link: '/note/es6/' },
               { text: '《Vue》', link: '/note/vue/' },
-              { text: '《React》', link: '/note/react/' },
-              {
-                text: '《TypeScript 从零实现 axios》',
-                link: '/note/typescript-axios/',
-              },
-              {
-                text: '《Git》',
-                link: '/note/git/',
-              },
-              {
-                text: 'TypeScript',
-                link: '/pages/51afd6/',
-              },
               {
                 text: 'JS设计模式总结',
                 link: '/pages/4643cd/',
@@ -69,13 +56,20 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
-        text: '页面',
-        link: '/ui/',
+        text: '后端',
+        link: '/backend/',
         items: [
-          { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
-          { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
-        ],
+          {
+            text: '学习笔记',
+            items: [
+              { text: '《Java Guard》', link: '/note/java/' },
+              { text: '《Python Guide》', link: '/note/python/' },
+              { text: '《Algorithm Guide》', link: '/note/algorithm/' },
+            ],
+          }
+        ]
       },
+
       {
         text: '技术',
         link: '/technology/',
@@ -101,11 +95,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         text: '收藏',
         link: '/pages/beb6c0bd8a66cea6/',
-        // items: [
-        //   { text: '网站', link: '/pages/beb6c0bd8a66cea6/' },
-        //   { text: '资源', link: '/pages/eee83a9211a70f9d/' },
-        //   { text: 'Vue资源', link: '/pages/12df8ace52d493f6/' },
-        // ],
       },
       {
         text: '索引',
@@ -119,7 +108,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
-    repo: 'xugaoyi/vuepress-theme-vdoing', // 导航栏右侧生成Github链接
+    repo: 'citccld/vuepress-theme-vdoing', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
@@ -166,14 +155,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
-      name: 'xugaoyi', // 必需
-      link: 'https://github.com/xugaoyi', // 可选的
+      name: 'citccld', // 必需
+      link: 'https://github.com/citccld', // 可选的
     },
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
       avatar: 'https://fastly.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg',
-      name: 'Evan Xu',
+      name: 'Sima Liu',
       slogan: '前端界的小学生',
     },
 
@@ -184,12 +173,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         {
           iconClass: 'icon-youjian',
           title: '发邮件',
-          link: 'mailto:894072666@qq.com',
+          link: 'mailto:840748670@qq.com',
         },
         {
           iconClass: 'icon-github',
           title: 'GitHub',
-          link: 'https://github.com/xugaoyi',
+          link: 'https://github.com/citccld',
         },
         {
           iconClass: 'icon-erji',
@@ -201,16 +190,16 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 页脚信息
     footer: {
-      createYear: 2019, // 博客创建年份
+      createYear: 2022, // 博客创建年份
       copyrightInfo:
-        'Evan Xu | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
+        'Evan Xu | <a href="https://github.com/citccld/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
     },
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
       author: {
-        name: 'xugaoyi',
-        link: 'https://github.com/xugaoyi'
+        name: 'citccld',
+        link: 'https://github.com/citccld'
       }
     },
 
@@ -230,14 +219,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
-    // [
-    //   'script',
-    //   {
-    //     'data-ad-client': 'ca-pub-7828333725993554',
-    //     async: 'async',
-    //     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-    //   },
-    // ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
   ],
 
 
@@ -329,11 +310,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       {
         choosen: 'gitalk',
         options: {
-          clientID: 'a6e1355287947096b88b',
-          clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
+          clientID: '8a4ce5ef0a12fe74e6ea',
+          clientSecret: 'd159da1969e0c8884ca6a0fe703d394940c0d545',
           repo: 'blog-gitalk-comment', // GitHub 仓库
-          owner: 'xugaoyi', // GitHub仓库所有者
-          admin: ['xugaoyi'], // 对仓库有写权限的人
+          owner: 'citccld', // GitHub仓库所有者
+          admin: ['citccld'], // 对仓库有写权限的人
           // distractionFreeMode: true,
           pagerDirection: 'last', // 'first'正序 | 'last'倒序
           id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
