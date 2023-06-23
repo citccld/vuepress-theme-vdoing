@@ -62,9 +62,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           {
             text: '学习笔记',
             items: [
-              { text: '《Java Guard》', link: '/note/java/' },
-              { text: '《Python Guide》', link: '/note/python/' },
-              { text: '《Algorithm Guide》', link: '/note/algorithm/' },
+              { text: '《Java Guard》笔记', link: '/note/java/' },
+              { text: '《Python Guide》笔记', link: '/note/python/' },
+              { text: '《Algorithm Guide》笔记', link: '/note/algorithm/' },
             ],
           }
         ]
