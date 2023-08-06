@@ -45,12 +45,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             text: '学习笔记',
             items: [
               { text: '《JavaScript教程》', link: '/note/javascript/' },
-              { text: '《ES6 教程》', link: '/note/es6/' },
-              { text: '《Vue》', link: '/note/vue/' },
-              {
-                text: 'JS设计模式总结',
-                link: '/pages/4643cd/',
-              },
+              { text: '《Vue》', link: '/note/vue/' }
             ],
           },
         ],
